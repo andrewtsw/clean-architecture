@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Dump2020.CleanArchitecture.Interfaces.BackgroundJobService</AssemblyName>
+    <RootNamespace>Dump2020.CleanArchitecture.Interfaces.BackgroundJobService</RootNamespace>
+  </PropertyGroup>
+
+</Project>

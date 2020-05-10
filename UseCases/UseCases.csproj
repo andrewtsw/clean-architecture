@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<AssemblyName>Dump2020.CleanArchitecture.UseCases</AssemblyName>
+	<RootNamespace>Dump2020.CleanArchitecture.UseCases</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure.CQRS.Interfaces\Infrastructure.CQRS.Interfaces.csproj" />
+    <ProjectReference Include="..\Interfaces.BackgroundJobService\Interfaces.BackgroundJobService.csproj" />
+    <ProjectReference Include="..\Interfaces.DataAccess\Interfaces.DataAccess.csproj" />
+    <ProjectReference Include="..\Interfaces.ExternalInvoicesService\Interfaces.ExternalInvoicesService.csproj" />
+  </ItemGroup>
+
+</Project>

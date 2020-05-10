@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Dump2020.CleanArchitecture.Interfaces.ExternalInvoicesService</AssemblyName>
+    <RootNamespace>Dump2020.CleanArchitecture.Interfaces.ExternalInvoicesService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>

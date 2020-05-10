@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Dump2020.CleanArchitecture.Infrastructure.DB.Interfaces</AssemblyName>
+    <RootNamespace>Dump2020.CleanArchitecture.Infrastructure.DB.Interfaces</RootNamespace>
+  </PropertyGroup>
+
+</Project>
