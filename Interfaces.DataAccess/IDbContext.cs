@@ -10,6 +10,8 @@ namespace Dump2020.CleanArchitecture.Interfaces.DataAccess
 
         IDbSet<Product> Products { get; }
 
+        IDbSet<Customer> Customers { get; }
+
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

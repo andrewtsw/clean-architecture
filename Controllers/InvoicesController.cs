@@ -72,7 +72,7 @@ namespace Dump2020.CleanArchitecture.Controllers
         /// </summary>
         /// <param name="id">Invoice id.</param>
         /// <param name="cancellationToken">Cancellation token.</param>
-        [HttpDelete]
+        [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

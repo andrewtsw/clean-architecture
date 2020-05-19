@@ -32,7 +32,7 @@ namespace Dump2020.CleanArchitecture.Adapters.DataAccess.SqlServer
 
         public ValueTask<TEntity> FindAsync<TKey>(TKey key, CancellationToken cancellationToken)
         {
-            return _dbSet.FindAsync(key, cancellationToken);
+            return _dbSet.FindAsync(new object[] { key }, cancellationToken);
         }
 
         public IAsyncEnumerator<TEntity> GetAsyncEnumerator(CancellationToken cancellationToken = default)

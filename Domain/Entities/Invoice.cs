@@ -13,6 +13,8 @@ namespace Dump2020.CleanArchitecture.Domain.Entities
         [MaxLength(50)]
         public string ExternalId { get; set; }
 
+        public int CustomerId { get; set; }
+
         public ICollection<InvoiceLineItem> LineItems { get; private set; } = new HashSet<InvoiceLineItem>();
 
         public decimal CalculateTotal()

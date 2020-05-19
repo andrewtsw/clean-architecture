@@ -20,19 +20,24 @@ namespace Dump2020.CleanArchitecture.Adapters.DataAccess.SqlServer
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-
+        #region IDbContext
         IDbSet<Invoice> IDbContext.Invoices => new AppDbSet<Invoice>(Invoices);
 
         IDbSet<Product> IDbContext.Products => new AppDbSet<Product>(Products);
+
+        IDbSet<Customer> IDbContext.Customers => new AppDbSet<Customer>(Customers);
 
         Task<int> IDbContext.SaveChangesAsync(CancellationToken cancellationToken)
         {
             return SaveChangesAsync(cancellationToken);
         }
+        #endregion
     }
 }
