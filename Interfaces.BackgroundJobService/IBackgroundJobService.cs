@@ -3,5 +3,7 @@
     public interface IBackgroundJobService
     {
         void EnqueueCreateInvoice(int invoiceId);
+
+        void EnqueueUpdateInvoice(int invoiceId);
     }
 }

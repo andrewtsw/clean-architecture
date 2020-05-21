@@ -30,6 +30,7 @@
     <ProjectReference Include="..\BackgroundJobService\BackgroundJobService.csproj" />
     <ProjectReference Include="..\Controllers\Controllers.csproj" />
     <ProjectReference Include="..\Infrastructure.CQRS.Mediator\Infrastructure.CQRS.Mediator.csproj" />
+    <ProjectReference Include="..\Infrastructure.Events.Mediator\Infrastructure.Events.Mediator.csproj" />
     <ProjectReference Include="..\UseCases\UseCases.csproj" />
   </ItemGroup>
 

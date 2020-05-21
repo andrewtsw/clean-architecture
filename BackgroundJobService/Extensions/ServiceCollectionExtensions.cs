@@ -17,7 +17,8 @@ namespace Dump2020.CleanArchitecture.BackgroundJobService.Extensions
 
             services.AddHangfireServer();
 
-            services.AddScoped<IBackgroundJobService, BackgroundJobService>();
+            //services.AddScoped<IBackgroundJobService, ServiceBackgroundJob>();
+            services.AddScoped<IBackgroundJobService, CommandBackgroundJob>();
 
             return services;
         }

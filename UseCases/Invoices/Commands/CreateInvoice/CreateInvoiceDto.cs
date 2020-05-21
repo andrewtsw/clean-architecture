@@ -17,8 +17,18 @@ namespace Dump2020.CleanArchitecture.UseCases.Invoices.Commands.CreateInvoice
         /// </summary>
         public List<CreateInvoiceLineItemDto> LineItems { get; set; }
 
+        /// <summary>
+        /// Customer Id.
+        /// </summary>
+        public int CustomerId { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
+            if (CustomerId <= 0)
+            {
+                yield return new ValidationResult($"CustomerId must be positive.", new[] { nameof(CustomerId) });
+            }
+
             if (LineItems == null || !LineItems.Any())
             {
                 yield return new ValidationResult(
@@ -30,12 +40,19 @@ namespace Dump2020.CleanArchitecture.UseCases.Invoices.Commands.CreateInvoice
 
     public class CreateInvoiceLineItemDto : IValidatableObject
     {
+        /// <summary>
+        /// Product Id.
+        /// </summary>
         public int ProductId { get; set; }
 
+        /// <summary>
+        /// Count.
+        /// </summary>
         public int Count { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
+            // TODO: add MinValue attribut for numbers.
             if (ProductId <= 0)
             {
                 yield return new ValidationResult($"ProductId must be positive.", new[] { nameof(ProductId) });

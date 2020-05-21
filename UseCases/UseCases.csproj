@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Infrastructure.CQRS.Interfaces\Infrastructure.CQRS.Interfaces.csproj" />
+    <ProjectReference Include="..\Infrastructure.Events.Interfaces\Infrastructure.Events.Interfaces.csproj" />
     <ProjectReference Include="..\Interfaces.BackgroundJobService\Interfaces.BackgroundJobService.csproj" />
     <ProjectReference Include="..\Interfaces.DataAccess\Interfaces.DataAccess.csproj" />
     <ProjectReference Include="..\Interfaces.ExternalInvoicesService\Interfaces.ExternalInvoicesService.csproj" />

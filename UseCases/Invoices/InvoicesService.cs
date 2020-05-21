@@ -23,5 +23,11 @@ namespace Dump2020.CleanArchitecture.UseCases.Invoices
             invoice.ExternalId = externalId;
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
+
+        public async Task UpdateExternalAsync(int invoiceId, CancellationToken cancellationToken)
+        {
+            var invoice = await _dbContext.Invoices.FindAsync(invoiceId, cancellationToken);
+            await _externalInvoicesService.UpdateAsync(invoice);
+        }
     }
 }

@@ -4,6 +4,7 @@ using Dump2020.CleanArchitecture.BackgroundJobService.Extensions;
 using Dump2020.CleanArchitecture.Controllers;
 using Dump2020.CleanArchitecture.Domain.Entities;
 using Dump2020.CleanArchitecture.Infrastructure.CQRS.Mediator.Extensions;
+using Dump2020.CleanArchitecture.Infrastructure.Events.Mediator.Extensions;
 using Dump2020.CleanArchitecture.UseCases.Extensions;
 using Dump2020.CleanArchitecture.UseCases.Invoices;
 using Hangfire;
@@ -35,6 +36,7 @@ namespace Dump2020.CleanArchitecture.Web
             services.AddDataAccess(Configuration);
             services.AddUseCases();
             services.AddCQRS();
+            services.AddEvents();
             services.AddExternalInvoicesService();
             services.AddBackgroundJobService(Configuration);
 

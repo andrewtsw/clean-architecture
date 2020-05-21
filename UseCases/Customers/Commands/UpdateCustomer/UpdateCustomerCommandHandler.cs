@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dump2020.CleanArchitecture.Infrastructure.CQRS.Interfaces;
+using Dump2020.CleanArchitecture.Infrastructure.Events.Interfaces;
 using Dump2020.CleanArchitecture.Interfaces.DataAccess;
 using MediatR;
 using System.Threading;
@@ -11,11 +12,13 @@ namespace Dump2020.CleanArchitecture.UseCases.Customers.Commands.UpdateCustomer
     {
         private readonly IDbContext _dbContext;
         private readonly IMapper _mapper;
+        private readonly IEventDispatcher _eventDispatcher;
 
-        public UpdateCustomerCommandHandler(IDbContext context, IMapper mapper)
+        public UpdateCustomerCommandHandler(IDbContext dbContext, IMapper mapper, IEventDispatcher eventDispatcher)
         {
-            _dbContext = context;
+            _dbContext = dbContext;
             _mapper = mapper;
+            _eventDispatcher = eventDispatcher;
         }
 
         public async Task<Unit> Handle(UpdateCustomerCommand command, CancellationToken cancellationToken)
@@ -27,6 +30,8 @@ namespace Dump2020.CleanArchitecture.UseCases.Customers.Commands.UpdateCustomer
             //}
             _mapper.Map(command.UpdateCustomerDto, customer);
             await _dbContext.SaveChangesAsync(cancellationToken);
+
+            await _eventDispatcher.Send(new CustomerUpdatedEvent(customer.Id), cancellationToken);
 
             return Unit.Value;
         }

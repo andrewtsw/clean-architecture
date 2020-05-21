@@ -6,5 +6,7 @@ namespace Dump2020.CleanArchitecture.Interfaces.ExternalInvoicesService
     public interface IExternalInvoicesService
     {
         Task<string> CreateAsync(Invoice invoice);
+
+        Task UpdateAsync(Invoice invoice);
     }
 }

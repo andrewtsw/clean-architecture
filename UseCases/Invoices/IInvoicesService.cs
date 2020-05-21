@@ -6,5 +6,7 @@ namespace Dump2020.CleanArchitecture.UseCases.Invoices
     public interface IInvoicesService
     {
         Task CreateExternalAsync(int invoiceId, CancellationToken cancellationToken);
+
+        Task UpdateExternalAsync(int invoiceId, CancellationToken cancellationToken);
     }
 }
